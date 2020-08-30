@@ -1,5 +1,11 @@
 <?php
 
+// $logger = new \Monolog\Logger("App");
+// $logger->pushProcessor(new \Monolog\Processor\UidProcessor());
+// $stream = new \Monolog\Handler\StreamHandler("/home/isucon/app.log", \Monolog\Logger::DEBUG);
+// $stream->setFormatter(new \Torb\HumanReadableFormatter());
+// $logger->pushHandler($stream);
+
 { //=====================
     function getAccessId(): string
     {
