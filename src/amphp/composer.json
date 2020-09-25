@@ -1,0 +1,7 @@
+{
+    "require": {
+        "amphp/amp": "^2.5",
+        "amphp/dns": "^1.2",
+        "amphp/http-client": "^4.5"
+    }
+}
