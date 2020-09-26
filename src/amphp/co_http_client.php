@@ -14,7 +14,7 @@ $time = microtime(true);
 $result = [];
 
 // async
-asyncCall(function () use (&$result){
+asyncCall(function () use (&$result) {
     $client = HttpClientBuilder::buildDefault();
 
     $uris = [];
@@ -40,27 +40,27 @@ asyncCall(function () use (&$result){
 
         foreach ($bodies as $uri => $body) {
             echo ".";
-            $result[] = $uri . " - " . \strlen($body) . " bytes" . substr($body, 0, 30) . PHP_EOL;
+            $result[] = $uri . " - " . strlen($body) . " bytes" . substr($body, 0, 30) . PHP_EOL;
         }
     } catch (HttpException $error) {
         echo $error;
     }
 });
 
-asyncCall(function (){ // just add another coroutine.
+asyncCall(function () { // just add another coroutine.
     for ($i = 0; $i < 3; ++$i) {
         echo "+";
         yield new Delayed(100);
     }
 });
 
-echo PHP_EOL. "loop registered" . (microtime(true) - $time) . "sec" . PHP_EOL;
+echo PHP_EOL . "loop registered" . (microtime(true) - $time) . "sec" . PHP_EOL;
 
 Loop::run(); // wait all
 
 // var_dump($result); // result set
 
-echo PHP_EOL. "para finish" . (microtime(true) - $time) . "sec" . PHP_EOL;
+echo PHP_EOL . "para finish" . (microtime(true) - $time) . "sec" . PHP_EOL;
 
 // sync
 $time = microtime(true);
@@ -71,5 +71,5 @@ for ($i = 0; $i < 379; ++$i) {
     echo "."; //$uri . " - " . \strlen($body) . " bytes" . substr($body, 0, 30) . PHP_EOL;
 }
 
-echo "sync finish" . (microtime(true) - $time) . "sec" . PHP_EOL;
+echo PHP_EOL . "sync finish" . (microtime(true) - $time) . "sec" . PHP_EOL;
 
