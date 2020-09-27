@@ -9,4 +9,3 @@ for ($i = 0; $i < 10000; $i++) {
     ;}' . PHP_EOL;
     file_put_contents(__DIR__ . "/store/" . microtime(true)*10000 . '_' . $i . ".php", $code);
 }
-

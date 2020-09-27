@@ -1,5 +1,8 @@
 <?php
 
+// TODO 探索するための関数
+// TODO シリアライズするための関数
+
 //  find store |grep php |xargs rm ; php generate.php
 
 // php -dmemory_limit=2000M -dopcache.preload=preload.php -dopcache.memory_consumption=512 -dopcache.enable_cli=1 memory_consumption=512 get_test.php
