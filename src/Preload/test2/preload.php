@@ -1,13 +1,15 @@
 <?php
 
-function my_preloaded() // preloadしたかどうかのフラグ代わり
+// preloadしたかどうかのフラグ代わり
+// 明示でPreloadするなら、いらない。
+function my_preloaded()
 {
     return true;
 }
 
 // globはファイル名でソートされた結果がかえってくる
 // https://www.php.net/manual/ja/function.glob.php
-// GLOB_NOSORT - ディレクトリに存在するファイルを返します (ソートはされません)。このフラグを使わない場合は、パス名をアルファベット順にソートします。
+// GLOB_NOSORT - (略)。このフラグを使わない場合は、パス名をアルファベット順にソートします。
 $list = glob(__DIR__ . '/store/*.php');
 
 // 以下はopcache.memory_consumptionパラメタの実験的なベンチマーク目的なので、実際にはよろしくないね
