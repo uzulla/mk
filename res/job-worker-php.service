@@ -1,0 +1,13 @@
+[Unit]
+Description = isutrain cancel service
+
+[Service]
+ExecStart = /home/isucon/isutrain/webapp/php/cli/cancel_worker.php
+
+Restart   = always
+Type      = simple
+User      = isucon
+Group     = isucon
+
+[Install]
+WantedBy = multi-user.target
